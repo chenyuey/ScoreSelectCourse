@@ -12,3 +12,9 @@ function get_social_practice_course()
     return [{course_name:'实践A',score:88,pass_score:60,credit:2},
         {course_name:'实践B',score:82,pass_score:60,credit:2}];
 }
+var student_scores = {
+    arr_social_practice_scores :[{course_name:'实践A',score:88,pass_score:60,credit:2},
+        {course_name:'实践B',score:82,pass_score:60,credit:2}],
+    arr_course_scores:[{course_name:'课程A',score:75,pass_score:60,is_required:true,credit:2},
+        {course_name:'课程B',score:69,pass_score:60,is_required:true,credit:2}]
+};

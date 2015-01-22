@@ -1,8 +1,9 @@
 /**
  * Created by chenyu on 15/1/21.
  */
-function ReplacementRule(arr_course_scores,arr_social_practice_scores)
+function ReplacementRule(student_scores,type)
 {
-    this.arr_course_scores = arr_course_scores;
-    this.arr_social_practice_scores = arr_social_practice_scores;
+    this.student_scores = student_scores;
+    this.type = type;
 }
+
