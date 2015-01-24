@@ -1,17 +1,17 @@
 /**
  * Created by chenyu on 15/1/21.
  */
-function ReplacementRule(student_scores,type)
+function ReplacementRule(student_scores)
 {
     this.student_scores = student_scores;
-    this.type = type;
 }
-ReplacementRule.prototype.show_scores()
+
+ReplacementRule.prototype.get_grade_list = function()
 {
     var arr_social_practice_scores = this.student_scores.arr_social_practice_scores;
     var arr_course_scores = this.student_scores.arr_course_scores;
-    if(this.type == 'hamon')
-    {
-        
-    }
+    return this.replace(arr_social_practice_scores,arr_course_scores);
+};
+ReplacementRule.prototype.replace  = function (arr_social_practice_scores,arr_course_scores) {
+
 }

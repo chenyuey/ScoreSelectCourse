@@ -19,5 +19,5 @@ describe('进度表',function(){
                         +'顺利毕业的所有课程平均分基线：70'+'\n'
                         +'当前所有课程平均分：70.8'+'\n'
                         +'**********************' ;
-    console.log(final_result);
+    //console.log(final_result);
 });
