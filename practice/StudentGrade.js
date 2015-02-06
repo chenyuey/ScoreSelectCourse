@@ -3,55 +3,36 @@ function StudentGrade(completed_course,completed_social_practice)
     this.completed_course = completed_course;
     this.completed_social_practice = completed_social_practice;
 }
-StudentGrade.prototype.get_required_course_score = function()
+StudentGrade.prototype.get_course_or_practice_score = function(course_type,required_flag)
 {
-    var sum_required_credit = 0;
-    for(var i = 0; i < this.completed_course.length; i ++)
+    var arr_courses = StudentGrade._get_array_course_or_practice_score(this,course_type);
+    var sum_credit = StudentGrade._get_sum_credit_of_courses(arr_courses,required_flag);
+    return sum_credit;
+};
+StudentGrade._get_array_course_or_practice_score = function(stu_grade,course_type)
+{
+    var arr_courses = stu_grade.completed_course;
+    if(course_type == 'practice')
+        arr_courses = stu_grade.completed_social_practice;
+    return arr_courses;
+};
+StudentGrade._get_sum_credit_of_courses = function(arr_courses,required_flag)
+{
+    var sum_credit = 0;
+    for(var i = 0; i < arr_courses.length; i ++)
     {
-        var course_score_info = this.completed_course[i];
-        if(course_score_info.is_required == true)
-        {
-            sum_required_credit = sum_required_credit + course_score_info.credit;
-        }
+        var course_score_info = arr_courses[i];
+        if (course_score_info.is_required == required_flag)
+            sum_credit = sum_credit + course_score_info.credit;
     }
-    return sum_required_credit;
-}
-StudentGrade.prototype.get_not_required_course_score = function()
+    return sum_credit;
+};
+StudentGrade.prototype.get_all_required_score = function(type)
 {
-    var sum_not_required_credit = 0;
-    for(var i = 0; i < this.completed_course.length; i ++)
-    {
-        var course_score_info = this.completed_course[i];
-        if(course_score_info.is_required == false)
-        {
-            sum_not_required_credit = sum_not_required_credit + course_score_info.credit;
-        }
-    }
-    return sum_not_required_credit;
-}
-StudentGrade.prototype.get_practice_required_course_score = function()
-{
-    var sum_practice_required_credit = 0;
     for(var i = 0; i < this.completed_social_practice.length; i ++)
     {
-        var practice_score_info = this.completed_social_practice[i];
-        if(practice_score_info.is_required == true)
-        {
-            sum_practice_required_credit = sum_practice_required_credit + practice_score_info.credit;
-        }
+
     }
-    return sum_practice_required_credit;
-}
-StudentGrade.prototype.get_practice_not_required_course_score = function()
-{
-    var sum_not_practice_required_credit = 0;
-    for(var i = 0; i < this.completed_social_practice.length; i ++)
-    {
-        var practice_score_info = this.completed_social_practice[i];
-        if(practice_score_info.is_required == false)
-        {
-            sum_not_practice_required_credit = sum_not_practice_required_credit + practice_score_info.credit;
-        }
-    }
-    return sum_not_practice_required_credit;
-}
+};
+
+var arr_replace_courses = [{course_name:'课程A',practice_name:'实践A'},{course_name:'课程B',practice_name:'实践B'}];

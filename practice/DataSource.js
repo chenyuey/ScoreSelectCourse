@@ -12,3 +12,4 @@ var student_scores = {
     arr_course_scores:[{course_name:'课程A',score:75,pass_score:60,is_required:true,credit:2},
         {course_name:'课程B',score:69,pass_score:60,is_required:true,credit:2}]
 };
+var arr_replace_courses = [{course_name:'课程A',practice_name:'实践A'},{course_name:'课程B',practice_name:'实践B'}];

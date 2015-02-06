@@ -14,4 +14,4 @@ ReplacementRule.prototype.get_grade_list = function()
 };
 ReplacementRule.prototype.replace  = function (arr_social_practice_scores,arr_course_scores) {
 
-}
+};

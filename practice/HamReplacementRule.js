@@ -5,7 +5,7 @@ extend(HamReplacementRule,ReplacementRule);
 
 HamReplacementRule.prototype.replace  = function (arr_social_practice_scores,arr_course_scores) {
     var arr_result = [];
-    console.log('****************8');
+
     for(var i = 0; i < arr_social_practice_scores.length; i ++)
     {
         if( arr_course_scores[i].score >= arr_course_scores[i].pass_score)

@@ -6,8 +6,7 @@ describe('置换规则',function(){
         var hamon_replacement_rule = new HamReplacementRule(student_scores);
         var arr_result = hamon_replacement_rule.get_grade_list();
         expect(arr_result.length).toBe(2);
-        console.log(arr_result[0].course_name);
-        console.log(arr_result[1].course_name);
+        console.log(arr_result);
         expect(arr_result[0].course_name).toBe('课程A');
         expect(arr_result[1].course_name).toBe('课程B');
 
